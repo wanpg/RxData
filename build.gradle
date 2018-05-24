@@ -30,5 +30,5 @@ task clean(type: Delete) {
 
 subprojects {
     apply plugin: 'com.github.dcendents.android-maven'
-    group = 'com.github.rxdata'
+    group = 'com.github.wanpg'
 }
