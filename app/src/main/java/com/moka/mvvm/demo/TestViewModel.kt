@@ -2,7 +2,7 @@ package com.moka.mvvm.demo
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.moka.mvvm.RxData
+import rxdata.RxData
 
 class TestViewModel : ViewModel() {
 

@@ -1,4 +1,4 @@
-package com.moka.mvvm;
+package rxdata;
 
 import android.arch.lifecycle.Lifecycle;
 import android.arch.lifecycle.LifecycleObserver;
@@ -53,8 +53,8 @@ public class RxData<T> {
     public DataObservable<DataWrap<T>> observable(LifecycleOwner owner) {
         DataCheck<DataWrap<T>> dataCheck = new DataCheck<>(owner);
         return triggers
-                .filter(dataCheck.getPredicateCheck())
                 .startWith(new DataWrap<>(data))
+                .filter(dataCheck.getPredicateCheck())
                 .to(DataObservable.<DataWrap<T>>toFunction(dataCheck));
     }
 

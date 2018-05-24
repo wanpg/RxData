@@ -60,7 +60,7 @@ class LiveDataFragment : Fragment() {
     override fun onDestroy() {
         super.onDestroy()
         testViewModel.dataRx.observable(this).subscribe({
-            Log.d(TAG, "收到消息：$it")
+            Log.d(LiveDataActivity.TAG, "收到消息：${if (it.isNull) "null" else it.get()}")
         })
     }
 }
