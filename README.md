@@ -7,6 +7,8 @@ RxJava实现的像LiveData一样有生命周期感知的可被观察的对象
 ### 引用方式
 ```groovy
 implementation 'com.github.wanpg:rxdata:0.0.4-SNAPSHOT'
+implementation "io.reactivex.rxjava2:rxjava:2.1.12"
+implementation 'io.reactivex.rxjava2:rxandroid:2.0.2'
 ```
 
 ### 使用方式
