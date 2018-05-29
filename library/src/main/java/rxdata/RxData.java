@@ -42,8 +42,18 @@ public class RxData<T> {
     public void set(T data) {
         synchronized (dataLock) {
             this.data = data;
-            triggers.onNext(new DataWrap<>(data));
+            notifyChangedInternal();
         }
+    }
+
+    public void notifyChanged() {
+        synchronized (dataLock) {
+            notifyChangedInternal();
+        }
+    }
+
+    private void notifyChangedInternal() {
+        triggers.onNext(new DataWrap<>(data));
     }
 
     public DataObservable<DataWrap<T>> observable() {
